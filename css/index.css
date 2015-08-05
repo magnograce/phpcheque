@@ -1,0 +1,6 @@
+div#menu{background:#999; width:550px; height:50px; margin:auto; float:none}
+div#menu ul li{display:inline}
+div#menu ul li a{color:#00F; font: 16px "Times New Roman", Times, serif; text-decoration:none; list-style:none; float:left; padding: 16px 15px}
+div#menu ul li a:hover{background:#CCC}
+div#home img{background:url(http://localhost/phpcheque/cheque.jpg)}
+div#home p{color:#00F; text-align:center}
