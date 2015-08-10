@@ -15,21 +15,27 @@
                 </div>
                 <div id="content">
                     <?php include("home.php") ?>
+                    
                     <?php
-                    $pasta = "phpcheque";
-                    $raiz = "localhost:8080/phpcheque/";
-                    
-                    $p = empty($_GET["pasta"]) ? "home" : $_GET["pasta"];
-                    $a = $raiz . $pasta . ".php";
-                    
-                    if(file_exists($a)) {
-                        include($pasta . "/" . $p . ".php");
-                    }else{
-                        require_once ("erro.php");
-                    }
+                        $index = "home";
+                        if (!empty($_GET["pagina"]))    {
+                            $index = $_GET["pagina"];
+                            
+                            if (!file_exists(dirname($index) . "/phpcheque/{$index}.php")) {
+                                $index = "erro";
+                            }
+                        }
+                        if (("home" == $index) || "erro" == $index)   {
+                            $pagina = dirname($index) . "/{$index}.php";
+                        }   else{
+                            $pagina = dirname($index) . "/phpcheque/{$index}.php";
+                        }
+                    require_once $pagina;
                     ?>
                 
                 <div id="footer">
+                    
+                    
                 </div>
                 </div>
         </div>

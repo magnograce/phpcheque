@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs">
+<ul class="nav nav-pills">
     <li><a href="index.php?pagina=home">Home</a></li>
     <li><a href="recebimento.php?pagina=recebimento">Recebimento</a></li>
     <li><a href="pagamento.php?pagina=pagamento">Pagamento</a></li>

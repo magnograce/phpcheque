@@ -1,1 +1,1 @@
-<p>Pagina não encontrada</p>
+<p>Erro</p>
