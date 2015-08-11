@@ -17,20 +17,21 @@
                     <?php include("home.php") ?>
                     
                     <?php
-                        $index = "home";
-                        if (!empty($_GET["pagina"]))    {
-                            $index = $_GET["pagina"];
-                            
-                            if (!file_exists(dirname($index) . "/phpcheque/{$index}.php")) {
-                                $index = "erro";
+                        $index = 'home';
+                        
+                        if (!empty($_GET['pag']))    {
+                            $index = $_GET['pag'];
+
+                            if (file_exists($index) . "/phpcheque/{$index}.php")    {
+                            $index = "erro";
                             }
                         }
-                        if (("home" == $index) || "erro" == $index)   {
-                            $pagina = dirname($index) . "/{$index}.php";
-                        }   else{
-                            $pagina = dirname($index) . "/phpcheque/{$index}.php";
+                        if (('home' == $index) || ('erro' == $index))    {
+                            $erro = dirname($index) . "/{$index}.php";
+                        } else {
+                            $erro = dirname($index) . "/phpcheque/{$erro}.php";
                         }
-                    require_once $pagina;
+                        require_once $erro;
                     ?>
                 
                 <div id="footer">
